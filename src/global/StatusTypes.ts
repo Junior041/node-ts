@@ -3,7 +3,9 @@ interface VariaveisGlobalType {
   RespostaErro: number;
 }
 
-export const VariaveisGlobal: VariaveisGlobalType = {
+export const RetornoStatus = {
   RespostaSucesso: 200,
   RespostaErro: 201,
-};
+} as const;
+
+type RetornoStatus = VariaveisGlobalType;

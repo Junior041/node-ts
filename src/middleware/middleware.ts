@@ -5,6 +5,7 @@ export const verificaJwt = async (
   next: NextFunction,
 ) => {
   try {
+    console.log(1);
     next();
   } catch (error) {
     console.log(error);

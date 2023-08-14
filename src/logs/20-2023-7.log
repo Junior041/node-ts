@@ -1,0 +1,5 @@
+2023-07-19T12:34:42.490Z [20-2023-7.log] error: {"status":201,"mensagem":"Erro ao conectar ao banco de dados"}
+2023-07-19T12:35:41.565Z [20-2023-7.log] info: {"status":200,"mensagem":"Conexão estabelecida com sucesso!"}
+2023-07-19T13:17:21.985Z [20-2023-7.log] error: {"response":{"status":200,"mensagem":"Conexão estabelecida com sucesso!"}}
+2023-07-19T13:18:05.018Z [20-2023-7.log] info: {"response":{"status":200,"mensagem":"Conexão estabelecida com sucesso!"}}
+2023-07-19T13:20:05.435Z [20-2023-7.log] error: {"response":{"status":201,"mensagem":"Erro ao conectar ao banco de dados"}}

@@ -1,5 +1,5 @@
 import { createLogger, transports, format } from 'winston';
-import { VariaveisGlobal } from '../global/variaveis.global';
+import { RetornoStatus } from '../global/StatusTypes';
 
 const myFormat = format.printf(({ level, message, label, timestamp }) => {
   return `${timestamp} [${label}] ${level}: ${JSON.stringify(message)}`;
@@ -23,7 +23,7 @@ export default class LogsClass {
         myFormat,
       ),
     });
-    if (response.status === VariaveisGlobal.RespostaSucesso) {
+    if (response.status === RetornoStatus.RespostaSucesso) {
       logger.info({ response });
     } else {
       logger.error({ response });

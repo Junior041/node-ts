@@ -1,4 +1,4 @@
 type ResponsePadraoTypes = {
   status: number;
-  mensagem: string;
+  retorno: string;
 };

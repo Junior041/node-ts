@@ -1,22 +1,15 @@
 import connection from './db/db';
-import { VariaveisGlobal } from '../global/variaveis.global';
 
-async function getServerStatus(): Promise<ResponsePadraoTypes> {
+async function buscarServerStatus(): Promise<any> {
   try {
-    await connection.authenticate();
-    return {
-      status: VariaveisGlobal.RespostaSucesso,
-      mensagem: 'Conexão estabelecida com sucesso!',
-    };
+    await connection.query('SELECT 1+1 AS result');
+    return true;
   } catch (error) {
-    console.log(error);
-    return {
-      status: VariaveisGlobal.RespostaErro,
-      mensagem: 'Erro ao conectar ao banco de dados',
-    };
+    console.error('Erro:', error);
+    return null;
   }
 }
 
 export default {
-  getServerStatus,
+  buscarServerStatus,
 };

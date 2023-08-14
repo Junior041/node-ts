@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import serverService from '../service/server.service';
-import { VariaveisGlobal } from '../global/variaveis.global';
+import { RetornoStatus } from '../global/StatusTypes';
 
 async function getServerStatus(
   req: Request,
@@ -8,11 +8,11 @@ async function getServerStatus(
   next: NextFunction,
 ): Promise<void> {
   try {
-    const response = await serverService.getServerStatus();
-    if (response.status === VariaveisGlobal.RespostaSucesso) {
-      res.status(VariaveisGlobal.RespostaSucesso).send(response);
+    const response: ResponsePadraoTypes = await serverService.buscarServerStatus();
+    if (response.status === RetornoStatus.RespostaSucesso) {
+      res.status(RetornoStatus.RespostaSucesso).send(response);
     } else {
-      res.status(VariaveisGlobal.RespostaErro).send(response);
+      res.status(RetornoStatus.RespostaErro).send(response);
     }
   } catch (err) {
     next(err);
