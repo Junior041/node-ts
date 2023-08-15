@@ -8,7 +8,8 @@ async function getServerStatus(
   next: NextFunction,
 ): Promise<void> {
   try {
-    const response: ResponsePadraoTypes = await serverService.buscarServerStatus();
+    const response: ResponsePadraoTypes =
+      await serverService.buscarServerStatus();
     if (response.status === RetornoStatus.RespostaSucesso) {
       res.status(RetornoStatus.RespostaSucesso).send(response);
     } else {
